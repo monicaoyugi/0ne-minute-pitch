@@ -4,13 +4,13 @@
 {% block content%}
 <h5 class="text-center">{{types.name}}</h5>
 <hr>
-<a class="btn btn-sm btn-outline-info center ml-5 m-2 btn-float" href="/category/pitch/new/{{types.id}}" style="position: relative;">Add pitch</a>
+<a class="btn btn-sm btn-outline-info center ml-5 m-2 btn-float" href="/category/add_pitch/{{cat_id}}" style="position: relative;">Add pitch</a>
 
 <div class="container">
    <div class="row">
-       {% if pitches %}
+       {% if pitch %}
 
-       {{macro.displayPitches(pitches)}}
+       {{macro.displayPitch(pitch)}}
        {% else %}
          <h4 class="text-center"> No pitches yet</h4>
          

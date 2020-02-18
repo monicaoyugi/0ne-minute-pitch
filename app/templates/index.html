@@ -5,10 +5,12 @@
 
 <div class="container">
         <h1 class="text-header text-center">{{title}}</h1>
-    
+
     <div class="row">
-            {{macro.displayTypes(types)}}
-       
+        <a href="{{url_for('main.add_pitch')}}">Submit</a>
+        <a href="{{url_for('main.interview')}}">Interview</a>
+        <a href="{{url_for('main.promotion')}}">Promotion</a>
+
     </div>
 </div>
 

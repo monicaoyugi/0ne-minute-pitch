@@ -1,0 +1,2 @@
+Hello {{user.username}}
+Welcome to one minute-pitch, This email is to confirm that you've signed up to our site... ~ monica

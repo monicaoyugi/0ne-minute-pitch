@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Pitches</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/" title="home" ><i class="fas fa-home"></i><span class="sr-only">(current)</span></a>
+            <a class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/category/1">Sales Pitches</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/category/2">Interview Pitches</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/category/3">Personal Pitches</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/category/4">PickUplines Pitches</a>
+
+                    </div>
+                </a>
+        </div>
+
+
+        <div class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{url_for('main.profile',uname=current_user.username)}}" title="profile"><i class="fas fa-user"></i> {{current_user.username}}</a>
+                <a class="nav-item nav-link" href="{{url_for('auth.logout')}}">Sign out <i class="fas fa-sign-out-alt"></i> </a>
+                {% else %}
+                <a class="nav-item nav-link" href="{{url_for('auth.login')}}">Sign in</a>
+                {%endif%}category/add_pitch
+
+        </div>
+    </div>
+</nav>
