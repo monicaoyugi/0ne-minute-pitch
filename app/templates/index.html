@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+<div class="container">
+        <h1 class="text-header text-center">{{title}}</h1>
+    
+    <div class="row">
+            {{macro.displayTypes(types)}}
+       
+    </div>
+</div>
+
+{% endblock %}

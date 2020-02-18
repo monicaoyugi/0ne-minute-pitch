@@ -1,0 +1,113 @@
+{% macro displayTypes(my_list) %}
+{%  for type in my_list %}
+<div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="card m-1" style="width: 15rem;">
+        <img src="https://picsum.photos/200/200?grayscale" class="card-img-top" alt="image">
+        <div class="card-body">
+            <h5 class="card-title">{{type.name}}</h5>
+            <p class="card-text">Take a minute of your life to do something awesome to change the world ,it really feels
+                good.</p>
+            <a href="/category/{{type.id}}" class="btn btn-info">view pitches</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+<!-- display for pitches for a given  category -->
+{%macro displayPitches(my_pitches)%}
+{% for pitch in my_pitches%}
+<div class="col-sm-12" style="padding-bottom: 25px;">
+    <div class="card m-auto">
+        <div class="card-header bg-info">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="" class="img-circle" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <h5 class="text-center">{{pitch.title}}</h5>
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">{{pitch.pitch}}</p>
+                <footer class="blockquote-footer">{{pitch.time}}</footer>
+            </blockquote>
+
+
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="/comments/{{pitch.id}}" class="btn btn-sm  btn-outline-info"> view comments</a>
+                </div>
+                <div class="col-sm-8"></div>
+                <div class="col-sm-2">
+                    <a href="/comments/new/{{pitch.id}}" class="btn  btn-sm  btn-outline-info">Add Comment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+<!-- display for user profile pitches category-->
+
+{% macro displayForProfile(my_list)  %}
+{% for type in my_list %}
+
+<div class="card m-2">
+    <div class="card-header bg-info">
+        <p class="text-center white">{{type.name}}</p>
+    </div>
+
+    <a href="/category/{{type.id}}" class="badge badge-info m-3">view pitches</a>
+</div>
+
+{% endfor %}
+{% endmacro %}
+
+<!-- display for pitches comments -->
+
+{% macro displayComments(comment_list) %}
+{% for comment in comment_list %}
+
+<div class="col-md-6 mb-3">
+    <div class="card">
+        <div class="card-body">
+            <h3>{{comment.comment_post}}</h3>
+        </div>
+        <div class="card-footer">
+            <footer class="blockquote-footer">{{comment.user.username}} commented on your pitch</footer>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %}
+{% endmacro %}
+
+<!--display for user pitches-->
+{% macro myPitches(pitch_list) %}
+{% for pitch in pitch_list%}
+
+<div class="col-md-6 mb-3">
+    <div class="card">
+        <div class="card-header">
+            {{pitch.title}}
+        </div>
+        <div class="card-body">
+            {{pitch.pitch}}
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endmacro %}
