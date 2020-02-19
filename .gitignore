@@ -1,0 +1,6 @@
+.vscode
+pitch
+__pycache__/
+start.sh
+migrations/__pycache__/
+
